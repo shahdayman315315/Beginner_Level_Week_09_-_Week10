@@ -41,7 +41,7 @@ namespace LinqProblems
             /*
              * PROBLEM 4: Count Students by Group
              * 
-             * Task: Count how many students are in each group. Order by group number. Use LINQ GroupBy.
+             * Task: Count how many students are in each group. Order by group number. Use LINQ.
              * 
              * Expected Output:
              * Group 1: 2 students
