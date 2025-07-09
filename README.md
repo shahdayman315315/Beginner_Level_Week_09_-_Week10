@@ -1,6 +1,5 @@
 # How to Submit Your Solutions 
 
-## Option 1: Fork Method (Recommended for Public Contributions)
 
 ### 1. Fork the Repository
 - Go to https://github.com/ziadyousef1/Beginner_Level_Week_09_-_Week10
