@@ -51,6 +51,11 @@ namespace LinqProblems
 
             // ============================================
             // YOUR SOLUTION HERE
+            var result = students.GroupBy(s => s.GroupNumber).OrderBy(group=>group.Key);
+            foreach(var group in result)
+            {
+                Console.WriteLine($"Group {group.Key}: { group.Count()} Students");
+            }
             // ============================================
 
         }

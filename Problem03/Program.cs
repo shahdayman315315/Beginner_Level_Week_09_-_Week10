@@ -51,6 +51,11 @@ namespace LinqProblems
 
             // ============================================
             // YOUR SOLUTION HERE
+            var result = students.Where(s => s.FirstName.Length > 5).OrderByDescending(s => s.FirstName.Length);
+            foreach (var student in result)
+            {
+                Console.WriteLine($"{student} (Length: {student.FirstName.Length})");
+            }
             // ============================================
 
         }

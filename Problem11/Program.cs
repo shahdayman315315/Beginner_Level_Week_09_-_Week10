@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace LinqProblems
 {
@@ -37,6 +38,13 @@ namespace LinqProblems
             Name = name;
             Instructor = instructor;
         }
+    }
+    public class StudentInfo
+    {
+        public Student student {  get; set; }
+        public string course {  get; set; }
+       public  string instructor {  get; set; }
+
     }
 
     class Program
@@ -75,6 +83,18 @@ namespace LinqProblems
 
             // ============================================
             // YOUR SOLUTION HERE
+           
+            var result = students.Join(courses,
+               s => s.CourseId,
+               c => c.Id,
+               (student, course) =>new StudentInfo()
+               { student = student, course = course.Name, instructor = course.Instructor }).OrderBy(sinf=>sinf.course).ThenBy(sinf=>sinf.student.FirstName)
+                ;
+            foreach (var studentinfo in result)
+            {
+                Console.WriteLine($"{studentinfo.student} - {studentinfo.course} ({studentinfo.instructor})");
+            }
+
             // ============================================
 
 

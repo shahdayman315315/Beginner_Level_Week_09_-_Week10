@@ -61,6 +61,25 @@ namespace LinqProblems
 
             // ============================================
             // YOUR SOLUTION HERE
+            var result1 = students.FirstOrDefault(s => s.FirstName.StartsWith('A'));
+            if (result1 != null)
+                Console.WriteLine("First with 'A': " + result1);
+
+            var result2 = students.LastOrDefault(s => s.Age > 20);
+            if (result2 != null)
+                Console.WriteLine("Last older than 20: " + result2);
+
+            var result3 = students.ElementAt(2);
+            Console.WriteLine("Student at index 2: " + result3);
+
+            var result4 = students.SingleOrDefault(s => s.Age == 19);
+            Console.WriteLine("Single student age 19: " + result4);
+
+            var result5 = students.Any(s => s.Age == 19);
+            Console.WriteLine("Any age 19: " + result5);
+
+            var result6 = students.All(s => s.Grades.Count() > 0);
+            Console.WriteLine("All have grades: " + result6);
             // ============================================
 
         }

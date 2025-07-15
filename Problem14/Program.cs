@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Intrinsics.X86;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace LinqProblems
 {
@@ -57,9 +59,28 @@ namespace LinqProblems
              * Cairo Total Grades: 982
              * All Names: Ahmed Hassan, Fatma Ibrahim, Omar Mahmoud, Yasmin Abdel-Rahman, Mohamed Ali, Nour El-Sayed
              */
-
+            
             // ============================================
             // YOUR SOLUTION HERE
+            
+
+            var result1 = students.Count();
+            Console.WriteLine("Total Students: "+result1);
+
+            var result2 = students.SelectMany(s => s.Grades).Average(g => g);
+            Console.WriteLine("Overall Average Grade: " + result2);
+
+            var result3=students.SelectMany(s=>s.Grades).Max(g => g);
+            Console.WriteLine("Highest Grade: "+result3);
+
+            var result4 = students.SelectMany(s => s.Grades).Min(g => g);
+            Console.WriteLine("Lowest Grade: " + result4);
+
+            var result5=students.Where(s=>s.City=="Cairo").SelectMany(s=>s.Grades).Sum(g => g);
+            Console.WriteLine("Cairo Total Grades: " + result5);
+
+            var result6 = students.Select(s => s.FirstName+" "+s.LastName).Aggregate((name1, name2) => $"{name1}  ,  {name2}");
+            Console.WriteLine("All Names:" + result6);
             // ============================================
 
         }

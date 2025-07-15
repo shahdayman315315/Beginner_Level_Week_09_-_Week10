@@ -48,6 +48,11 @@ namespace LinqProblems
 
             // ============================================
             // YOUR SOLUTION HERE
+            var result = students.Where(s => s.Marks.Any(m => m == 6));
+            foreach(var student in result)
+            {
+                Console.WriteLine(student);
+            }
             // ============================================
 
         }

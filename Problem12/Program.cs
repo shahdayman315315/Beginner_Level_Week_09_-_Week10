@@ -65,6 +65,30 @@ namespace LinqProblems
 
             // ============================================
             // YOUR SOLUTION HERE
+            var result1 = cairoStudents.Intersect(alexandriaStudents);
+            var result2 = cairoStudents.Union(alexandriaStudents).Union(gizaStudents);
+            var result3 = cairoStudents.Except(alexandriaStudents);
+            var result4 = cairoStudents.Distinct();
+            Console.WriteLine("Intersection (Cairo ∩ Alexandria):");
+            foreach(var s in result1)
+            {
+                Console.WriteLine(s);
+            }
+            Console.WriteLine("Union (All unique students):");
+            foreach (var s in result2)
+            {
+                Console.WriteLine(s);
+            }
+            Console.WriteLine("Cairo Except Alexandria:");
+            foreach (var s in result3)
+            {
+                Console.WriteLine(s);
+            }
+            Console.WriteLine("distinct cairo students");
+            foreach (var s in result4)
+            {
+                Console.WriteLine(s);
+            }
             // ============================================
 
         }

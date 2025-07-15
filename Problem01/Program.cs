@@ -49,6 +49,12 @@ namespace LinqProblems
 
             // ============================================
             // YOUR SOLUTION HERE
+            var result = students.Where(s => s.GroupNumber == 2).OrderBy(s => s.FirstName);
+
+            foreach (var student in result)
+            {
+                Console.WriteLine(student);
+            }
             // ============================================
 
         }

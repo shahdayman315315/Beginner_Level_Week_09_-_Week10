@@ -51,6 +51,15 @@ namespace LinqProblems
             */
             // ============================================
             // YOUR SOLUTION HERE
+            var result = students.Where(s => s.FacultyNumber[4] == '1' && (s.FacultyNumber[5] == '5' || s.FacultyNumber[5]=='4'));
+            foreach(var student in result)
+            {
+                foreach(var mark in student.Marks)
+                {
+                    Console.Write(mark+" ");
+                }
+                Console.WriteLine();
+            }
             // ============================================
 
         }

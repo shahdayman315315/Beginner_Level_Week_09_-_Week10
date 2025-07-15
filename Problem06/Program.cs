@@ -48,6 +48,11 @@ namespace LinqProblems
 
             // ============================================
             // YOUR SOLUTION HERE
+            var result = students.Where(s => s.Marks.Where(m => (m <= 3)).Count() >= 2);
+            foreach(var student in result)
+            {
+                Console.WriteLine(student);
+            }
             // ============================================
 
         }

@@ -49,6 +49,11 @@ namespace LinqProblems
 
             // ============================================
             // YOUR SOLUTION HERE
+            var result = students.Where(s => s.Email.Contains("@gmail.com"));
+            foreach (var student in result)
+            {
+                Console.WriteLine(student);
+            }
             // ============================================
 
         }

@@ -66,6 +66,17 @@ namespace LinqProblems
 
             // ============================================
             // YOUR SOLUTION HERE
+            var result = students.GroupBy(s => s.City).OrderBy(g => g.Key);
+            foreach (var group in result)
+            {
+                Console.WriteLine(group.Key);
+                var top2students = group.OrderByDescending(g => g.AverageGrade).Take(2);
+                foreach (var student in top2students)
+                {
+                    Console.WriteLine($"{student} - Average: {Math.Round(student.AverageGrade,1).ToString("F1")}");
+                }
+            }
+                
             // ============================================
 
         }
